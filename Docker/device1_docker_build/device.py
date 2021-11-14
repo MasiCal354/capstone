@@ -1,3 +1,4 @@
+
 from faker import Faker
 from faker.config import AVAILABLE_LOCALES
 from datetime import timezone
@@ -18,13 +19,13 @@ def get_locale(lc):
 
 
 def main(run_min=1):
-    Faker.seed(8711)
+    # Faker.seed(8711)
     fake = Faker('en_US')
     en_us = get_locale([en for en in AVAILABLE_LOCALES if 'en_' in en])
     keys = ('lat', 'lon', 'location', 'country_code', 'timezone')
     message = {'device_id': fake.isbn10()}
 
-    print(en_us)
+    # print(en_us)
 
     tic = time.perf_counter()
     while ((time.perf_counter() - tic) / 60) < run_min:
@@ -35,7 +36,7 @@ def main(run_min=1):
         message.update(alt_as)
         print(message)
         time.sleep(random.uniform(.1, 2))
-    print((time.perf_counter() - tic) / 60)
+    # print((time.perf_counter() - tic) / 60)
 
 
 if __name__ == '__main__':
