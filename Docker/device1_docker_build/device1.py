@@ -21,7 +21,7 @@ def main(run_min=1):
     Faker.seed(8711)
     fake = Faker('en_US')
     en_us = get_locale([en for en in AVAILABLE_LOCALES if 'en_' in en])
-    keys = ('lat', 'lon', 'location', 'country_ code', 'timezone')
+    keys = ('lat', 'lon', 'location', 'country_code', 'timezone')
     message = {'device_id': fake.isbn10()}
 
     print(en_us)
