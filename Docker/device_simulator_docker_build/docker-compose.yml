@@ -1,0 +1,19 @@
+version: "3"
+services:
+   device_1:
+      image: device_simulator
+      container_name: device_1
+      build:
+         context: .
+         dockerfile: Dockerfile
+      environment:
+         - run_min=${RUN_MIN}
+   
+   device_2:
+      image: device_simulator
+      container_name: device_2
+      build:
+         context: .
+         dockerfile: Dockerfile
+      environment:
+         - run_min=${RUN_MIN}
