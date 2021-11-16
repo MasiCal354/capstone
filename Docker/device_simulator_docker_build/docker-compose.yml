@@ -6,8 +6,6 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
-      environment:
-         - run_min=${RUN_MIN}
    
    device_2:
       image: device_simulator
@@ -15,5 +13,3 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
-      environment:
-         - run_min=${RUN_MIN}

@@ -11,7 +11,6 @@ import argparse
 
 def get_locale(lc):
     rnd_country = random.randint(0, len(lc)-1)
-
     loc = lc[rnd_country].split('_')
     if len(loc) > 1:
         return loc[1].upper()
@@ -41,7 +40,8 @@ def main(run_min=1):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('run_min', type=int, help='Number of minutes to run simulation')
-    args = parser.parse_args()
-    main(args.run_min)
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('run_min', type=int, help='Number of minutes to run simulation')
+    # args = parser.parse_args()
+    pass_run_min = 3
+    main(pass_run_min)
