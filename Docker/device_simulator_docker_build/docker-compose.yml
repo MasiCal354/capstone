@@ -1,15 +1,53 @@
 version: "3"
 services:
+   nifi:
+      hostname: nifi
+      image: apache/nifi:latest
+      container_name: nifi
+      ports:
+         - 8080:8080
+      environment:
+         - NIFI_WEB_HTTP_HOST=nifi
+         - NIFI_WEB_HTTP_PORT=8080
+ 
    device_1:
       image: device_simulator
       container_name: device_1
       build:
          context: .
          dockerfile: Dockerfile
-   
+
    device_2:
       image: device_simulator
       container_name: device_2
+      build:
+         context: .
+         dockerfile: Dockerfile
+         
+   device_3:
+      image: device_simulator
+      container_name: device_3
+      build:
+         context: .
+         dockerfile: Dockerfile
+
+   device_4:
+      image: device_simulator
+      container_name: device_4
+      build:
+         context: .
+         dockerfile: Dockerfile
+
+   device_5:
+      image: device_simulator
+      container_name: device_5
+      build:
+         context: .
+         dockerfile: Dockerfile
+
+   device_6:
+      image: device_simulator
+      container_name: device_6
       build:
          context: .
          dockerfile: Dockerfile
