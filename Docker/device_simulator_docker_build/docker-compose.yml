@@ -9,6 +9,8 @@ services:
       environment:
          - NIFI_WEB_HTTP_HOST=nifi
          - NIFI_WEB_HTTP_PORT=8080
+      networks:
+        - nifi_websocket
  
    device_1:
       image: device_simulator
@@ -16,6 +18,8 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+      networks:
+        - nifi_websocket
 
    device_2:
       image: device_simulator
@@ -23,6 +27,8 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+      networks:
+        - nifi_websocket
          
    device_3:
       image: device_simulator
@@ -30,6 +36,8 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+      networks:
+        - nifi_websocket
 
    device_4:
       image: device_simulator
@@ -37,6 +45,8 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+      networks:
+        - nifi_websocket
 
    device_5:
       image: device_simulator
@@ -44,6 +54,8 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+      networks:
+        - nifi_websocket
 
    device_6:
       image: device_simulator
@@ -51,3 +63,9 @@ services:
       build:
          context: .
          dockerfile: Dockerfile
+      networks:
+        - nifi_websocket
+
+networks:
+  nifi_websocket:
+    driver: bridge
